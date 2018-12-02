@@ -48,12 +48,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="d0p0.cs" />
+    <Compile Include="d3p1.cs" />
     <Compile Include="d1p1.cs" />
     <Compile Include="d1p2.cs" />
+    <Compile Include="d0p0.cs" />
     <Compile Include="d2p1.cs" />
     <Compile Include="d2p2.cs" />
-    <Compile Include="d3p3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +61,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="d_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_0.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="d_2.txt">

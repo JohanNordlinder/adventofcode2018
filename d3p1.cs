@@ -6,7 +6,7 @@ using System.Linq;
 namespace AdventOfCode2018
 {
     [TestClass]
-    public class D3P3
+    public class D3P1
     {
 
         [TestMethod]
