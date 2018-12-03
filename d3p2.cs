@@ -6,14 +6,14 @@ using System.Linq;
 namespace AdventOfCode2018
 {
     [TestClass]
-    public class D3P1
+    public class D3P2
     {
 
         [TestMethod]
         public void TestRun()
         {
             var input = System.IO.File.ReadAllLines("d_3_t_1.txt").ToList();
-            Assert.AreEqual(4, new Program().RunChallenge(input));
+            Assert.AreEqual(3, new Program().RunChallenge(input));
         }
 
         [TestMethod]
@@ -32,6 +32,8 @@ namespace AdventOfCode2018
                 public int StartY { set; get; }
                 public int LengthX { set; get; }
                 public int LengthY { set; get; }
+                public bool HasBeenOverlapped { set; get; }
+
             }
 
             private class FabricInch
@@ -62,6 +64,7 @@ namespace AdventOfCode2018
                         StartY = split[2],
                         LengthX = split[3],
                         LengthY = split[4],
+                        HasBeenOverlapped = false
                     };
                 }).ToList();
 
@@ -71,13 +74,18 @@ namespace AdventOfCode2018
                     {
                         for (int y = claim.StartY; y < claim.StartY + claim.LengthY; y++)
                         {
-                            inches[x,y].claims.Add(claim);
+                            var claimsHere = inches[x, y].claims;
+                            claimsHere.Add(claim);
+                            if (claimsHere.Count() > 1)
+                            {
+                                claimsHere.ForEach(c => c.HasBeenOverlapped = true);
+                            }
                         }
                     }
 
                 });
 
-                return inches.Cast<FabricInch>().ToList().Count(inch => inch.claims.Count() > 1);
+                return claims.First(claim => !claim.HasBeenOverlapped).Id;
             }
         }
     }
