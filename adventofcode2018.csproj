@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="d4p2.cs" />
     <Compile Include="d4p1.cs" />
     <Compile Include="shared.cs" />
     <Compile Include="d3p2.cs" />
@@ -63,7 +64,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="d_4_t_1y.txt">
+    <Content Include="d_4_t_1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="d_4.txt">

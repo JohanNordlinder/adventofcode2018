@@ -6,14 +6,14 @@ using System.Linq;
 namespace AdventOfCode2018
 {
     [TestClass]
-    public class D4P1
+    public class D4P2
     {
 
         [TestMethod]
         public void TestRun()
         {
             var input = System.IO.File.ReadAllLines("d_4_t_1.txt").ToList();
-            Assert.AreEqual(240, new Program().RunChallenge(input));
+            Assert.AreEqual(4455, new Program().RunChallenge(input));
         }
 
         [TestMethod]
@@ -105,7 +105,7 @@ namespace AdventOfCode2018
                     }
                 });
 
-                var maxGuard = guards.OrderByDescending(g => g.AsleepAt.Sum()).Take(1).First();
+                var maxGuard = guards.OrderByDescending(g => g.AsleepAt.Max()).Take(1).First();
                 var maxMinute = maxGuard.AsleepAt.ToList().IndexOf(maxGuard.AsleepAt.Max());
 
                 return maxGuard.Id * maxMinute;
