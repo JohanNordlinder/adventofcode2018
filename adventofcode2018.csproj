@@ -48,6 +48,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="d5p2.cs" />
+    <Compile Include="d6p2.cs" />
+    <Compile Include="d6p1.cs" />
+    <Compile Include="d5p1.cs" />
     <Compile Include="d4p2.cs" />
     <Compile Include="d4p1.cs" />
     <Compile Include="shared.cs" />
@@ -64,6 +68,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="d_6_t_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="d_4_t_1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
