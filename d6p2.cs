@@ -13,7 +13,7 @@ namespace AdventOfCode2018
         public void TestRun()
         {
             var input = System.IO.File.ReadAllLines("d_6_t_1.txt").ToList();
-            Assert.AreEqual(17, new Program().RunChallenge(input));
+            Assert.AreEqual(16, new Program().RunChallenge(input));
         }
 
         [TestMethod]
@@ -54,59 +54,33 @@ namespace AdventOfCode2018
 
                 var points = new Point[gridSize.X, gridSize.Y];
 
+                int count = 0;
+
                 for (int x = 0; x < gridSize.X; x++)
                 {
                     for (int y = 0; y < gridSize.Y; y++)
                     {
                         var p = new Point { Coordinate = new Coordinate { X = x, Y = y } };
 
-                        var lowestIndex = -1;
-                        var lowestDistance = 99999;
+                        var distance = 0;
                         for (int c = 0; c < coordinates.Length; c++)
                         {
 
                             var coord = coordinates[c];
-                            var distance = Math.Abs(coord.X - x) + Math.Abs(coord.Y - y);
-
-                            if (distance < lowestDistance)
-                            {
-                                lowestIndex = c;
-                                lowestDistance = distance;
-                            } else if (distance == lowestDistance)
-                            {
-                                lowestIndex = -1;
-                                lowestDistance = distance;
-                            }
+                            distance = distance + Math.Abs(coord.X - x) + Math.Abs(coord.Y - y);
                         }
-                        p.ClosestTo = lowestIndex;
+
+   
+                        if (distance < 10000)
+                        {
+                            count++;
+
+                        }
                         points[x, y] = p;
                     }
                 }
 
-                // iterare punkter, hitta grupper och radera grupper som ligger på kanten på griddet
-                var areas = new List<Area>();
-
-                for (int x = 0; x < gridSize.X; x++)
-                {
-                    for (int y = 0; y < gridSize.Y; y++)
-                    {
-                        var point = points[x, y];
-                        if (!areas.Any(a => a.Id == point.ClosestTo))
-                        {
-                            areas.Add(new Area { Id = point.ClosestTo, Size = 1 });
-                        } else
-                        {
-                            areas.First(a => a.Id == point.ClosestTo).Size++;
-                        }
-
-                        if ((x == gridSize.X || x == 0) || (y == gridSize.Y || y == 0))
-                        {
-                            areas.First(a => a.Id == point.ClosestTo).infinite = true;
-                        }
-                    }
-                }
-
-                return areas.Where(a => !a.infinite).Max(z => z.Size);
+                return count;
             }
         }
     }
