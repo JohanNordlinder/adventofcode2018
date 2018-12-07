@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace AdventOfCode2018
 {
+
     public class Coordinate
     {
         public int X { get; set; }
@@ -39,6 +40,12 @@ namespace AdventOfCode2018
         public Coordinate Coordinate { get; set; }
         public Velocity Velocity { get; set; }
         public Acceleration Acceleration { get; set; }
+    }
+
+    public class StringConstants
+    {
+        public static string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
     }
 
     static class StringExtensions

@@ -13,32 +13,19 @@ namespace AdventOfCode2018
         public void TestRun()
         {
             var input = System.IO.File.ReadAllLines("d_6_t_1.txt").ToList();
-            Assert.AreEqual(16, new Program().RunChallenge(input));
+            Assert.AreEqual(16, new Program().RunChallenge(input, 32));
         }
 
         [TestMethod]
         public void RealRun()
         {
             var input = System.IO.File.ReadAllLines("d_6.txt").ToList();
-            Console.WriteLine("Result: " + new Program().RunChallenge(input));
+            Console.WriteLine("Result: " + new Program().RunChallenge(input, 10000));
         }
 
         public class Program
         {
-            private class Point
-            {
-                public Coordinate Coordinate { set; get; }
-                public int ClosestTo { set; get; }
-            }
-
-            private class Area
-            {
-                public int Size { set; get; }
-                public int Id { set; get; }
-                public bool infinite { set; get; }
-            }
-
-            public int RunChallenge(List<string> input)
+            public int RunChallenge(List<string> input, int maxCombinedDistance)
             {
                 var coordinates = input.Select(raw =>
                 {
@@ -52,31 +39,24 @@ namespace AdventOfCode2018
 
                 var gridSize = new { X = coordinates.Max(c => c.X), Y = coordinates.Max(c => c.Y) };
 
-                var points = new Point[gridSize.X, gridSize.Y];
-
                 int count = 0;
 
                 for (int x = 0; x < gridSize.X; x++)
                 {
                     for (int y = 0; y < gridSize.Y; y++)
                     {
-                        var p = new Point { Coordinate = new Coordinate { X = x, Y = y } };
-
                         var distance = 0;
                         for (int c = 0; c < coordinates.Length; c++)
                         {
-
                             var coord = coordinates[c];
                             distance = distance + Math.Abs(coord.X - x) + Math.Abs(coord.Y - y);
                         }
 
-   
-                        if (distance < 10000)
+                        if (distance < maxCombinedDistance)
                         {
                             count++;
 
                         }
-                        points[x, y] = p;
                     }
                 }
 

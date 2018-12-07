@@ -35,7 +35,7 @@ namespace AdventOfCode2018
             {
                 public int Size { set; get; }
                 public int Id { set; get; }
-                public bool infinite { set; get; }
+                public bool Infinite { set; get; }
             }
 
             public int RunChallenge(List<string> input)
@@ -60,8 +60,8 @@ namespace AdventOfCode2018
                     {
                         var p = new Point { Coordinate = new Coordinate { X = x, Y = y } };
 
-                        var lowestIndex = -1;
-                        var lowestDistance = 99999;
+                        var closestPointIndex = -1;
+                        var lowestDistance = int.MaxValue;
                         for (int c = 0; c < coordinates.Length; c++)
                         {
 
@@ -70,20 +70,19 @@ namespace AdventOfCode2018
 
                             if (distance < lowestDistance)
                             {
-                                lowestIndex = c;
+                                closestPointIndex = c;
                                 lowestDistance = distance;
                             } else if (distance == lowestDistance)
                             {
-                                lowestIndex = -1;
-                                lowestDistance = distance;
+                                closestPointIndex = -1;
                             }
                         }
-                        p.ClosestTo = lowestIndex;
+                        p.ClosestTo = closestPointIndex;
                         points[x, y] = p;
                     }
                 }
 
-                // iterare punkter, hitta grupper och radera grupper som ligger på kanten på griddet
+                // Iterera punkter, hitta grupper och radera grupper som ligger på kanten på griddet
                 var areas = new List<Area>();
 
                 for (int x = 0; x < gridSize.X; x++)
@@ -101,12 +100,12 @@ namespace AdventOfCode2018
 
                         if ((x == gridSize.X || x == 0) || (y == gridSize.Y || y == 0))
                         {
-                            areas.First(a => a.Id == point.ClosestTo).infinite = true;
+                            areas.First(a => a.Id == point.ClosestTo).Infinite = true;
                         }
                     }
                 }
 
-                return areas.Where(a => !a.infinite).Max(z => z.Size);
+                return areas.Where(a => !a.Infinite).Max(z => z.Size);
             }
         }
     }
