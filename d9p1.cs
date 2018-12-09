@@ -15,7 +15,7 @@ namespace AdventOfCode2018
             Assert.AreEqual(32, new Program().RunChallenge(9, 25));
             Assert.AreEqual(8317, new Program().RunChallenge(10, 1618));
             Assert.AreEqual(146373, new Program().RunChallenge(13, 7999));
-            //Assert.AreEqual(2764, new Program().RunChallenge(17, 1104)); // Can't make this work, but who cares :)
+            Assert.AreEqual(2764, new Program().RunChallenge(17, 1104));
             Assert.AreEqual(54718, new Program().RunChallenge(21, 6111));
             Assert.AreEqual(37305, new Program().RunChallenge(30, 5807));
         }
@@ -34,7 +34,7 @@ namespace AdventOfCode2018
                 var game = new LinkedList<int>();
                 var lastMarble = game.AddFirst(0);
 
-                for (int i = 1; i < lastMarbeScore; i++)
+                for (int i = 1; i <= lastMarbeScore; i++)
                 {
                     if (i % 23 == 0)
                     {
