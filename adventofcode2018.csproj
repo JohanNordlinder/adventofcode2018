@@ -48,6 +48,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="d9p2.cs" />
+    <Compile Include="d9p1.cs" />
+    <Compile Include="d8p2.cs" />
     <Compile Include="d8p1.cs" />
     <Compile Include="d7p2.cs" />
     <Compile Include="d7p1.cs" />
@@ -62,7 +65,7 @@
     <Compile Include="d3p1.cs" />
     <Compile Include="d1p1.cs" />
     <Compile Include="d1p2.cs" />
-    <Compile Include="d0p0.cs" />
+    <Compile Include="d0p1.cs" />
     <Compile Include="d2p1.cs" />
     <Compile Include="d2p2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +74,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="d_0_t_0.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_9.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_9_t_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="d_8.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
