@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="d10p1.cs" />
     <Compile Include="d9p2.cs" />
     <Compile Include="d9p1.cs" />
     <Compile Include="d8p2.cs" />
@@ -75,6 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="d_0_t_0.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_10_t_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_10.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="d_9.txt">
