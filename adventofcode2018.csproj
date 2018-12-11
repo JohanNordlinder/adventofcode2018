@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="d11p2.cs" />
     <Compile Include="d11p1.cs" />
     <Compile Include="d10p1.cs" />
     <Compile Include="d9p2.cs" />
