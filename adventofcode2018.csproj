@@ -48,6 +48,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="d14p2.cs" />
+    <Compile Include="d14p1.cs" />
+    <Compile Include="d12p4.cs" />
+    <Compile Include="d12p3.cs" />
+    <Compile Include="d12p2.cs" />
+    <Compile Include="d12p1.cs" />
     <Compile Include="d11p2.cs" />
     <Compile Include="d11p1.cs" />
     <Compile Include="d10p1.cs" />
@@ -77,6 +83,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="d_12_t_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_12.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="d_11.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
