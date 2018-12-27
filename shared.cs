@@ -58,7 +58,7 @@ namespace AdventOfCode2018
 
     public enum Direction
     {
-        DOWN, UP, LEFT, RIGHT
+        DOWN, UP, LEFT, RIGHT, FORWARD
     }
 
     public static class DirectionTurns
