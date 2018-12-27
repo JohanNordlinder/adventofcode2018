@@ -6,18 +6,14 @@ using System.Linq;
 namespace AdventOfCode2018
 {
     [TestClass]
-    public class D11P1
+    public class D11P2
     {
 
         [TestMethod]
         public void TestRun()
         {
-            Assert.AreEqual(4, Program.CalculatePowerLevel(3, 5, 8));
-            Assert.AreEqual(-5, Program.CalculatePowerLevel(122, 79, 57));
-            Assert.AreEqual(0, Program.CalculatePowerLevel(217, 196, 39));
-            Assert.AreEqual(4, Program.CalculatePowerLevel(101, 153, 71));
-
-            Assert.AreEqual("33,45", new Program().RunChallenge(18));
+            //Assert.AreEqual("90,269,16", new Program().RunChallenge(18));
+            Assert.AreEqual("232,251,12", new Program().RunChallenge(42));
         }
 
         [TestMethod]
@@ -50,23 +46,26 @@ namespace AdventOfCode2018
                     }
                 }
 
-                PowerCell maxCell = new PowerCell();
+                var gridSize = 0;
+                var maxCellX = 0;
+                var maxCellY = 0;
+                var maxWeight = 0;
 
-                for (int x = 1; x <= 298; x++)
+                for (int i = 1; i <= 300; i++)
                 {
-                    for (int y = 1; y <= 298; y++)
+                    
+                    var cell = findMax(powerCells, i);
+                    if (cell.Weight > maxWeight)
                     {
-                        var cell = powerCells[x, y];
-                        cell.Weight = CalculateWeight(powerCells, x, y);
-
-                        if(cell.Weight > maxCell.Weight)
-                        {
-                            maxCell = cell;
-                        }
+                        maxWeight = cell.Weight;
+                        maxCellX = cell.X;
+                        maxCellY = cell.Y;
+                        gridSize = i;
                     }
                 }
 
-                return (maxCell.X) + "," + (maxCell.Y);
+
+                return (maxCellX) + "," + (maxCellY) + "," + gridSize;
             }
 
             public static int CalculatePowerLevel(int x, int y, int serial)
@@ -79,13 +78,34 @@ namespace AdventOfCode2018
                 return hundred - 5;
             }
 
-            public static int CalculateWeight(PowerCell[,] powerCells, int startX, int startY)
+            public static PowerCell findMax(PowerCell[,] powerCells, int gridSize)
+            {
+                PowerCell maxCell = new PowerCell();
+
+                for (int x = 1; x <= 300 - (gridSize - 1); x++)
+                {
+                    for (int y = 1; y <= 300 - (gridSize - 1); y++)
+                    {
+                        var cell = powerCells[x, y];
+                        cell.Weight = CalculateWeight(powerCells, x, y, gridSize, gridSize);
+
+                        if (cell.Weight > maxCell.Weight)
+                        {
+                            maxCell = cell;
+                        }
+                    }
+                }
+
+                return maxCell;
+            }
+
+            public static int CalculateWeight(PowerCell[,] powerCells, int startX, int startY, int sizeX, int sizeY)
             {
                 var tot = 0;
 
-                for (int x = startX; x < startX + 3; x++)
+                for (int x = startX; x < startX + sizeX; x++)
                 {
-                    for (int y = startY; y < startY + 3; y++)
+                    for (int y = startY; y < startY + sizeY; y++)
                     {
                         tot += powerCells[x, y].PowerLevel;
                     }
