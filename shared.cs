@@ -9,6 +9,16 @@ namespace AdventOfCode2018
         public int X { get; set; }
         public int Y { get; set; }
         public int Z { get; set; }
+
+        public override bool Equals(Object obj)
+        {
+            return (obj.GetType() == typeof(Coordinate)) && (this.X == ((Coordinate) obj).X) && (this.Y == ((Coordinate)obj).Y) && (this.Z == ((Coordinate)obj).Z);
+        }
+
+        public override int GetHashCode()
+        {
+            return X * 1000 + Y * 100 + Z * 10;
+        }
     }
 
     public class CoordinateMovement

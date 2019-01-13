@@ -115,7 +115,7 @@ namespace AdventOfCode2018
                 return registers[0];
             }
 
-            private List<OpCode> CreateOpCodes()
+            public static List<OpCode> CreateOpCodes()
             {
                 var opcodes = new List<OpCode>
                 {

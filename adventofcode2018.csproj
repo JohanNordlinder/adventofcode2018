@@ -47,8 +47,8 @@
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="RoyT.AStar, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\RoyT.AStar.2.1.0\lib\netstandard1.0\RoyT.AStar.dll</HintPath>
+    <Reference Include="Microsoft.Z3">
+      <HintPath>..\z3-4.8.4.d6df51951f4c-x86-win\bin\Microsoft.Z3.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -110,6 +110,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="d25p1.cs" />
+    <Compile Include="d24p2.cs" />
+    <Compile Include="d24p1.cs" />
+    <Compile Include="d23p2.cs" />
+    <Compile Include="d23p1.cs" />
+    <Compile Include="d22p2.cs" />
+    <Compile Include="d22p1.cs" />
+    <Compile Include="d21p2.cs" />
+    <Compile Include="d21p1.cs" />
+    <Compile Include="d20p2.cs" />
+    <Compile Include="d20p1.cs" />
+    <Compile Include="d19p2.cs" />
+    <Compile Include="d19p1.cs" />
+    <Compile Include="d11p2.cs" />
+    <Compile Include="d12p1.cs" />
+    <Compile Include="d12p2.cs" />
+    <Compile Include="d12p3.cs" />
+    <Compile Include="d12p4.cs" />
+    <Compile Include="d14p1.cs" />
+    <Compile Include="d14p2.cs" />
+    <Compile Include="d16p1.cs" />
+    <Compile Include="d16p2.cs" />
     <Compile Include="d18p2.cs" />
     <Compile Include="d18p1.cs" />
     <Compile Include="d17p2.cs" />
@@ -144,9 +166,56 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="D21P1.xlsx" />
+    <None Include="D19P2.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="d_25_t_4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_25_t_3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_25_t_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_25_t_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_25.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_23.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_23_t_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_23_t_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_21.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_19.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_19_t_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_12.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_12_t_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_16.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_16_t_1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="d_18.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -219,10 +288,22 @@
     <Content Include="d_10.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="d_9.txt">
+    <Content Include="d_20.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="d_9_t_1.txt">
+    <Content Include="d_20_t_5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_20_t_4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_20_t_3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_20_t_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="d_20_t_1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="d_8.txt">
